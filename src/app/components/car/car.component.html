@@ -14,6 +14,7 @@
     <th>ColorName</th>
     <th>Model Year</th>
     <th>Günlük Ücret</th>
+    <th>Kdv li Günlük Ücret</th>
     <th>Araba ismi</th>
     <th>Açıklama</th>
     <th> </th>
@@ -28,7 +29,9 @@
     <td>{{car.colorId}}</td>
     <td>{{car.modelYear}}</td>
     <td>{{car.dailyPrice|currency}}</td>
+    <td>{{car.dailyPrice}}</td>
     <td>{{car.carName |uppercase}}</td>
     <td>{{car.description}}</td>
+    <td><button (click)="addToCart(car)" type="button" class="btn btn-success">Sepete ekle</button></td>
   </tr>
 </table>
