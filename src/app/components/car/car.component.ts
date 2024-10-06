@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CarComponent implements OnInit {
 cars:Car[] = [];
+filterText = '';
 dataLoaded = false;
 constructor(private CarService:CarService, private activatedRoute:ActivatedRoute){}
 
@@ -50,6 +51,9 @@ ngOnInit(): void {
       this.dataLoaded = true;
     })
     console.log();
+  }
+  addToCart(car:Car){
+
   }
 
 }

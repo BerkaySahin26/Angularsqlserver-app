@@ -2,6 +2,10 @@
   <span class="visually-hidden">Loading..</span>
 </div>
 
+<div *ngIf="filterText.length > 2" class="alert alert-primary">
+  {{filterText}} aradınız
+  </div>
+
 <table *ngIf="dataLoaded == true" class="table">
   <thead>
     <tr>
@@ -12,6 +16,7 @@
     <th>Günlük Ücret</th>
     <th>Araba ismi</th>
     <th>Açıklama</th>
+    <th> </th>
 
 
 
@@ -22,8 +27,8 @@
     <td>{{car.brandId}}</td>
     <td>{{car.colorId}}</td>
     <td>{{car.modelYear}}</td>
-    <td>{{car.dailyPrice}}</td>
-    <td>{{car.carName}}</td>
+    <td>{{car.dailyPrice|currency}}</td>
+    <td>{{car.carName |uppercase}}</td>
     <td>{{car.description}}</td>
   </tr>
 </table>
