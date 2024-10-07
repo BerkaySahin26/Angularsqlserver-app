@@ -7,11 +7,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrandComponent } from "./components/brand/brand.component";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { NaviComponent } from "./components/navi/navi.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, CommonModule, CarComponent, MatSelectModule, BrandComponent,BrandComponent, CarComponent, MatToolbarModule,MatCardModule],
+  imports: [RouterOutlet, FormsModule, CommonModule, CarComponent, MatSelectModule, BrandComponent, BrandComponent, CarComponent, MatToolbarModule, MatCardModule, NaviComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

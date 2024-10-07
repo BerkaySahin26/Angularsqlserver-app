@@ -10,11 +10,16 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { VatAddedPipe } from "../../pipes/vat-added.pipe";
+import { FilterPipePipe } from "../../pipes/filter-pipe.pipe";
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { CartService } from '../../services/cart.service';
+import { createPopper } from '@popperjs/core';
 
 @Component({
   selector: 'app-car',
   standalone: true,
-  imports: [MatSelectModule,MatCardModule,MatButtonModule,MatToolbarModule,RouterOutlet,FormsModule,HttpClientModule,CommonModule],
+  imports: [MatSelectModule, MatCardModule, MatButtonModule, MatToolbarModule, RouterOutlet, FormsModule, HttpClientModule, CommonModule, VatAddedPipe, FilterPipePipe,ToastrModule],
   templateUrl: './car.component.html',
   styleUrl: './car.component.css'
 })
@@ -22,7 +27,7 @@ export class CarComponent implements OnInit {
 cars:Car[] = [];
 filterText = '';
 dataLoaded = false;
-constructor(private CarService:CarService, private activatedRoute:ActivatedRoute){}
+constructor(private CarService:CarService, private activatedRoute:ActivatedRoute , private toastr:ToastrService, private cartService:CartService){}
 
 ngOnInit(): void {
    this.activatedRoute.params.subscribe(params =>
@@ -33,6 +38,7 @@ ngOnInit(): void {
     }else
     {
       this.getCars();
+
     }
    }
    )
@@ -53,6 +59,14 @@ ngOnInit(): void {
     console.log();
   }
   addToCart(car:Car){
+    if(car.id===1)
+    {
+      this.toastr.error("Hata,bu ürün sepete eklenemez")
+    }else
+    {
+      this.toastr.success("Sepete eklendi", car.carName)
+      this.cartService.addToCart(car);
+    }
 
   }
 
