@@ -5,27 +5,27 @@
   <div class="card-body">
    <form [formGroup]="carAddForm">
 
-    <label for = "productName">Araba ismi</label>
+    <label for = "carName">Araba ismi</label>
     <div class="form-group mb-2">
       <input type="text" id="carName" formControlName="carName" class="form-control" placeholder="Ürün adı"/>
     </div>
-    <label for = "categoryId">Marka</label>
+    <label for = "brandId">Marka</label>
     <div class="form-group mb-2">
       <input type="number" id="brandId" formControlName="brandId" class="form-control" placeholder="Kategori"/>
     </div>
-    <label for = "categoryId">Renk</label>
+    <label for = "colorId">Renk</label>
     <div class="form-group mb-2">
       <input type="number" id="colorId" formControlName="colorId" class="form-control" placeholder="Kategori"/>
     </div>
-    <label for = "unitsInStock">Günlük Ücret</label>
+    <label for = "dailyPrice">Günlük Ücret</label>
     <div class="form-group mb-2">
-      <input type="number" id="dailyPrice" formControlName="unitsInStock" class="form-control" placeholder="Stok adedi"/>
+      <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control" placeholder="Stok adedi"/>
     </div>
-    <label for = "unitPrice">Model Yılı</label>
+    <label for = "modelYear">Model Yılı</label>
     <div class="form-group mb-2">
       <input type="date" id="modelYear" formControlName="modelYear" class="form-control" placeholder="Fiyatı"/>
     </div>
-    <label for = "unitPrice">Açıklama</label>
+    <label for = "description">Açıklama</label>
     <div class="form-group mb-2">
       <input type="text" id="description" formControlName="description" class="form-control" placeholder="Fiyatı"/>
     </div>

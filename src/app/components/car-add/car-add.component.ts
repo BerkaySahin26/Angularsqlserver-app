@@ -15,8 +15,8 @@ export class CarAddComponent implements OnInit {
 carAddForm:FormGroup;
 constructor(private formbuilder:FormBuilder,private carService:CarService, private toastr:ToastrService) {}
   ngOnInit(): void {
-    this.createCarAddForm()
-    this.add()
+    this.createCarAddForm();
+
 
   }
   createCarAddForm(){
@@ -41,12 +41,9 @@ constructor(private formbuilder:FormBuilder,private carService:CarService, priva
           this.toastr.error(responseError.console.error.Errors[i].ErrorMessage,"Doğrulama hatası")
 
         }
-
       }
-
-
     })
-    }else
+ }else
     {
         this.toastr.error("Formunuz eksik","Dikkat")
     }
